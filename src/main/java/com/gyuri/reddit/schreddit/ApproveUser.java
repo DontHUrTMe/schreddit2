@@ -12,11 +12,11 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class ApproveUser {
     @Value( "${schreddit.token.auth}" )
-    private String tokenAuth="djZWWnI3OEs2R0xDWmhpREhRY2x1ZzpsT1hUUFdSWks0MzQ4Sy13RnczZGpDRUxwTEVZUkE=";
+    private String tokenAuth="";
     @Value( "${schreddit.bot.password}" )
-    private String botpass="schbot2021";
+    private String botpass="";
     @Value( "${schreddit.bot.uname}" )
-    private String botuname="SCH_BoT2";
+    private String botuname="";
     public String approve(String uname) throws UnirestException {
 
         Unirest.setTimeouts(2000, 1500);
