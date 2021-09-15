@@ -56,7 +56,7 @@ open class LoginController {
     @GetMapping("/login")
     fun items(request: HttpServletRequest): String {
         return "redirect:" + authSch.generateLoginUrl(buildUniqueState(request),
-                Scope.BASIC, Scope.GIVEN_NAME, Scope.SURNAME, Scope.MAIL, Scope.ENTRANTS, Scope.EDU_PERSON_ENTILEMENT)
+                Scope.BASIC, Scope.GIVEN_NAME, Scope.SURNAME, Scope.MAIL)
     }
 
     fun buildUniqueState(request: HttpServletRequest): String {

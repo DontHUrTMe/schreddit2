@@ -1,6 +1,7 @@
 package com.gyuri.reddit.schreddit;
 
-public class rUname {
+public class RUname {
+
     private String uname;
 
     public String getUname() {

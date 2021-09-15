@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.gyuri.reddit</groupId>
-    <artifactId>schpreddit</artifactId>
+    <artifactId>schreddit</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
 
@@ -88,6 +88,7 @@
     </dependencies>
 
     <build>
+        <finalName>schreddit</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
