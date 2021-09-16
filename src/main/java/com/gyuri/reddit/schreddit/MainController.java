@@ -51,8 +51,9 @@ public class MainController {
 
     @GetMapping("/auth")
     public RedirectView authreddit(Model model) {
-        return new RedirectView("https://www.reddit.com/api/v1/authorize?client_id=h0joy84RiHJePyZvfaEG9w&response_type=code&state="+state()+"&redirect_uri=http://localhost:80/approve&duration=temporary&scope=identity");
+        return new RedirectView("https://www.reddit.com/api/v1/authorize?client_id=h0joy84RiHJePyZvfaEG9w&response_type=code&state="+state()+"&redirect_uri=https://r.sch.bme.hu/approve&duration=temporary&scope=identity");
     }
+
 
     @GetMapping("/call")
     public String call(@ModelAttribute RUname user, Model model) throws Exception {

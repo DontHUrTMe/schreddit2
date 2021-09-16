@@ -77,14 +77,14 @@ public class ApproveUser {
                 .header("user-agent", "ChangeMeClient/0.1 by gyorik")
                 .field("grant_type", "authorization_code")
                 .field("code", code)
-                .field("redirect_uri", "http://localhost:80/approve").getHttpRequest();
+                .field("redirect_uri", "https://r.sch.bme.hu/approve").getHttpRequest();
 
         HttpResponse<JsonNode> response = Unirest.post("https://www.reddit.com/api/v1/access_token")
                 .header("Authorization", "Basic "+clientToken)
                 .header("user-agent", "ChangeMeClient/0.1 by gyorik")
                 .field("grant_type", "authorization_code")
                 .field("code", code)
-                .field("redirect_uri", "http://localhost:80/approve").asJson();
+                .field("redirect_uri", "https://r.sch.bme.hu/approve").asJson();
         return response.getBody().getObject().getString("access_token");
     }
 
