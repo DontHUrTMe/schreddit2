@@ -26,9 +26,6 @@ open class LoginController {
     @Autowired
     private lateinit var authSch: AuthSchAPI
 
-    @Value("\${schpincer.sysadmins:}")
-    private lateinit var systemAdmins: String
-
     @GetMapping("/loggedin")
     fun loggedIn(@RequestParam code: String, @RequestParam state: String, request: HttpServletRequest): String {
         if (buildUniqueState(request) != state)
@@ -50,7 +47,7 @@ open class LoginController {
             auth?.isAuthenticated = false
             e.printStackTrace()
         }
-        return if (auth != null && auth.isAuthenticated) "redirect:/approve" else "redirect:/?error"
+        return if (auth != null && auth.isAuthenticated) "redirect:/auth" else "redirect:/?error"
     }
 
     @GetMapping("/login")

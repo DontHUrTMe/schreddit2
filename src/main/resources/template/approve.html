@@ -33,10 +33,11 @@
 				<!-- Main -->
 				<div id="main">
 					<form th:action="@{/call}" th:object="${rUname}" method="GET" action="#">
-						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 						<div class="row gtr-uniform">
 							<div class="col-6 col-12-xsmall">
-								<input  type="text" th:field="*{uname}" name="uname" id="uname" value="" placeholder="Reddit user name" />
+								<input type="hidden" th:field="*{token}" name="token" id="token" value="${rUname.getToken()}" />
+								<input type="hidden" th:field="*{uname}" name="uname" id="uname" value="${rUname.getUname()}" />
+								<p>Your reddit username: <b th:text="${rUname.getUname()}">user_name</b></p>
 							</div>
 							<!-- Break -->
 							<div class="col-12">
@@ -46,7 +47,6 @@
 							</div>
 						</div>
 					</form>
-
 				</div>
 
 

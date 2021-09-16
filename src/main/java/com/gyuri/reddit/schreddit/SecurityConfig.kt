@@ -19,13 +19,13 @@ enum class Role {
 @EnableWebSecurity
 @Configuration
 open class SecurityConfig : WebSecurityConfigurerAdapter() {
-
     override fun configure(http: HttpSecurity) {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/loggedin", "/login").permitAll()
                 .antMatchers("/approve").hasRole(Role.USER.name)
                 .antMatchers("/call").hasRole(Role.USER.name)
+                .antMatchers("/auth").hasRole(Role.USER.name)
                 .and()
                 .formLogin()
                 .loginPage("/login")
